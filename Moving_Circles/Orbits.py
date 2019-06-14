@@ -186,7 +186,7 @@ while running == True:
         line_connect.end=(dots3[0])
         line_connect.draw()
         
-        win.getMovieFrame(buffer='back')         
+        #win.getMovieFrame(buffer='back') # for getting for e.g. gif         
         win.flip()
         
         dots.pop(0)
@@ -222,7 +222,7 @@ while running == True:
                     item.radius-=.1
             # quit
             if thisKey == 'escape':
-                win.saveMovieFrames('orbits.gif')
+                # win.saveMovieFrames('orbits.gif') # save frames for e.g. gif
                 win.close()
     
 win.close()

@@ -96,7 +96,7 @@ while running == True:
         line2.draw()
         line3.draw()
         
-        win.getMovieFrame(buffer='back')         
+        # win.getMovieFrame(buffer='back') # get frames to save as e.g. gif         
         win.flip()
 
         dots.pop(0)
@@ -132,7 +132,7 @@ while running == True:
                 
             # quit
             if thisKey == 'escape':
-                win.saveMovieFrames('myMovie.gif')
+                # win.saveMovieFrames('myMovie.gif') # save frames to e.g. gif
                 win.close()
     
 win.close()
