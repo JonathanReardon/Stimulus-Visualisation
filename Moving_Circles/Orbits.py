@@ -1,9 +1,11 @@
+#!/usr/bin/python3
+
 from psychopy import visual, core, event, sound
 import random
 import matplotlib.pyplot as plt
 import math
 
-win = visual.Window([800,600],color=(0,0,0), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win = visual.Window([1000,800],color=(0,0,0), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
 
 refresh_rate = 60.0
 stim_dur = 10
@@ -184,6 +186,7 @@ while running == True:
         line_connect.end=(dots3[0])
         line_connect.draw()
         
+        win.getMovieFrame(buffer='back')         
         win.flip()
         
         dots.pop(0)
@@ -219,6 +222,7 @@ while running == True:
                     item.radius-=.1
             # quit
             if thisKey == 'escape':
+                win.saveMovieFrames('orbits.gif')
                 win.close()
     
 win.close()
