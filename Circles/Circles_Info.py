@@ -4,7 +4,7 @@ import math
 from math import sqrt
 
 #set window/mouse objects & refresh rate
-win = visual.Window([1000,600],color="grey", colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win = visual.Window([1000,800],color="grey", colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
 myMouse = event.Mouse(visible=True,win=win)
 
 refresh_rate = 60.0

@@ -3,7 +3,7 @@ import random
 import math
 
 #set window/mouse objects & refresh rate
-win = visual.Window([800,600],color=(-1,-1,-1), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win = visual.Window((1000,800),color=(-1,-1,-1), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
 myMouse = event.Mouse(visible=True,win=win)
 
 refresh_rate = 60.0
