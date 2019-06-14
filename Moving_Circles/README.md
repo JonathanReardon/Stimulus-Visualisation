@@ -1,5 +1,7 @@
-![alt text](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Circles/Images/Multi_Circles.gif "Multiple Circles")
+![alt text](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/Orbits.gif "Orbits")
 
-Multi_Circles.py
+Orbits.py
 
+![alt text](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/Orbits2.gif "Orbits2")
 
+Orbits2.py
