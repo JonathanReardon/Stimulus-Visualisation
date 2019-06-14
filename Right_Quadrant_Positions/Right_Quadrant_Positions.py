@@ -1,6 +1,8 @@
+#!/usr/bin/python
+
 from psychopy import visual, core, gui, event, sound
 
-win = visual.Window([800,600],color=(1,1,1), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False)
+win = visual.Window([1000,800],color=(1,1,1), colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False)
 
 circle_rad = 0.9
 
