@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 from psychopy import visual, core, event, sound
 import random
 import math
