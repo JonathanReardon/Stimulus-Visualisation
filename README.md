@@ -1,5 +1,5 @@
 # Stimulus-Visualisation
-Python/Psychopy visualizations for visually checking stimulus location/angle/distance accuracy.
+Python/Psychopy visualizations for checking stimulus location/angle/distance accuracy.
 
 Multi_Circles.py             |  Kanizsa_FourQuadrant_Grid.py
 :-------------------------:|:-------------------------:
