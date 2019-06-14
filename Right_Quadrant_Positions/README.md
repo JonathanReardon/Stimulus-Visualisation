@@ -1,4 +1,4 @@
-![alt text](https://github.com/JonathanReardon/StimulusVisualisation/blob/master/Kanizsa_FourQuadrant_Grid/Images/Kanizsa_FourQuadrant_Grid.png "Kanizsa Four Quadrant Grid Image")
+![alt text](https://github.com/JonathanReardon/StimulusVisualisation/blob/master/Right_Quadrant_Positions/Images/Right_Quadrant_Positions.png "Right Quadrant Positions")
 
-Kanizsa_FourQuadrant_Grid.py
+Right_Quadrant_Positions.py
 
