@@ -1,5 +1,7 @@
 ![alt_text](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/orbit_block.gif
-orbot_block.py)
+orbot_block.py, "Orbits3")
+
+Orbits3.py
 
 ![alt text](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/Orbits.gif "Orbits")
 
