@@ -1,8 +1,8 @@
 # Stimulus-Visualisation
 Python/Psychopy visualizations for checking stimulus location/angle/distance accuracy.
 
-Orbits3.py     |  Kanizsa_FourQuadrant_Grid_ColorChange.py 
-:-----------------------------------------------------:
+Orbits3.py            |  Kanizsa_FourQuadrant_Grid_ColorChange.py 
+:-------------------------:|:-------------------------:
 ![](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/orbit_block.gif)  |  ![]
 (https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Kanizsa_FourQuadrant_Grid/Images/color_change.gif)
 
