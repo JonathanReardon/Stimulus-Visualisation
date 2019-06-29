@@ -92,6 +92,9 @@ for i in range(n_dots):
 routine = True
 while routine == True:
     
+    if len(circle_position) == 0:
+        break
+    
     Rect.pos = [rect_x, rect_y]
     Rect.draw()
     
@@ -132,6 +135,7 @@ while routine == True:
     line_connector1.draw()
     line_connector2.draw()
    
+    #win.getMovieFrame(buffer='back')
     win.flip()
     
     circle_position.pop(0)
@@ -141,6 +145,7 @@ while routine == True:
     
     rect_x = rect_x+.015
 
+#win.saveMovieFrames('orbit_block.gif')
 win.close()
 core.quit()
     
