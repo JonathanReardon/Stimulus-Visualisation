@@ -4,8 +4,10 @@ from psychopy import visual, core, gui, event
 import numpy as np
 import random
 
-win = visual.Window([1920, 1080], color=("white"), colorSpace='rgb', rgb=None, allowGUI=False,
-                     monitor='testMonitor', units='deg', fullscr=False, screen=1)
+win = visual.Window([750,650], color=("black"), colorSpace='rgb', rgb=None, allowGUI=False,
+                     monitor='testMonitor', units='deg', fullscr=False, screen=0)
+                     
+win.mouseVisible = False
 
 circle_rad = .9
     
@@ -55,8 +57,8 @@ horiz_lineB = (18,0)
 vert_lineA = (0,-12)
 vert_lineB = (0,12)
 
-circle4deg = visual.Circle(win, units = 'deg', radius=4, lineColor='blue')
-circle6deg = visual.Circle(win, units = 'deg', radius=6, lineColor='blue')
+circle4deg = visual.Circle(win, units = 'deg', radius=4, lineColor='blue', lineWidth=3.5)
+circle6deg = visual.Circle(win, units = 'deg', radius=6, lineColor='blue', lineWidth=3.5)
 
 class Fixation(object): 
     def __init__(self): 
@@ -75,10 +77,10 @@ class Fixation(object):
 tri_colors = ['white', 'blue', 'yellow', 'orange', 'green']
 #random.shuffle(tri_colors)
 
-triangle1 = visual.ShapeStim(win, units = 'deg', vertices = ((grid1),(grid3),(grid2)) , fillColor=tri_colors[0])
-triangle2 = visual.ShapeStim(win, units = 'deg', vertices = ((grid4),(grid6),(grid5)) , fillColor=tri_colors[0])
-triangle3 = visual.ShapeStim(win, units = 'deg', vertices = ((grid7),(grid9),(grid8)) , fillColor=tri_colors[0])
-triangle4 = visual.ShapeStim(win, units = 'deg', vertices = ((grid10),(grid12),(grid11)) , fillColor=tri_colors[0])
+triangle1 = visual.ShapeStim(win, units = 'deg', vertices = ((grid1),(grid3),(grid2)) , fillColor=tri_colors[0],   opacity=1)
+triangle2 = visual.ShapeStim(win, units = 'deg', vertices = ((grid4),(grid6),(grid5)) , fillColor=tri_colors[0],   opacity=1)
+triangle3 = visual.ShapeStim(win, units = 'deg', vertices = ((grid7),(grid9),(grid8)) , fillColor=tri_colors[0],   opacity=1)
+triangle4 = visual.ShapeStim(win, units = 'deg', vertices = ((grid10),(grid12),(grid11)) , fillColor=tri_colors[0],opacity=1)
 
 triangles = [triangle1, triangle2, triangle3, triangle4]
 circle_colors = ['blue', 'green', 'violet', 'orange', 'yellow']
@@ -86,10 +88,10 @@ circle_colors = ['blue', 'green', 'violet', 'orange', 'yellow']
 class Green_rect(object):
     def __init__(self):
         """create visual components"""
-        self.line1 = visual.ShapeStim(win, units = 'deg', vertices = ((grid13),(grid14)), lineColor='green')
-        self.line2 = visual.ShapeStim(win, units = 'deg', vertices = ((grid15),(grid16)), lineColor='green')
-        self.line3 = visual.ShapeStim(win, units = 'deg', vertices = ((grid17),(grid18)), lineColor='green')
-        self.line4 = visual.ShapeStim(win, units = 'deg', vertices = ((grid19),(grid20)), lineColor='green')
+        self.line1 = visual.ShapeStim(win, units = 'deg', vertices = ((grid13),(grid14)), lineColor='green', lineWidth=2.5)
+        self.line2 = visual.ShapeStim(win, units = 'deg', vertices = ((grid15),(grid16)), lineColor='green', lineWidth=2.5)
+        self.line3 = visual.ShapeStim(win, units = 'deg', vertices = ((grid17),(grid18)), lineColor='green', lineWidth=2.5)
+        self.line4 = visual.ShapeStim(win, units = 'deg', vertices = ((grid19),(grid20)), lineColor='green', lineWidth=2.5)
 
         self.components = [self.line1, self.line2, self.line3, self.line4]
         
@@ -99,8 +101,8 @@ class Green_rect(object):
 class Gridlines(object):
     def __init__(self):
         """create visual components"""
-        self.vertline = visual.ShapeStim(win, units = 'deg', vertices = ((horiz_lineA),(horiz_lineB)) , lineColor='green')
-        self.hozline  = visual.ShapeStim(win, units = 'deg', vertices = ((vert_lineA),(vert_lineB)) , lineColor='green')
+        self.vertline = visual.ShapeStim(win, units = 'deg', vertices = ((horiz_lineA),(horiz_lineB)) , lineColor='green', lineWidth=3.5)
+        self.hozline  = visual.ShapeStim(win, units = 'deg', vertices = ((vert_lineA),(vert_lineB)) , lineColor='green',   lineWidth=3.5)
 
         self.components = [self.vertline, self.hozline]
         
@@ -111,8 +113,8 @@ class Gridlines(object):
 class Outer1(object):
     def __init__(self):
         """create visual components"""
-        self.circle1 = visual.Circle(win, units = 'deg', pos=(outer1), radius=circle_rad, fillColor="red")
-        self.circle2 = visual.Circle(win, units = 'deg', pos=(outer2), radius=circle_rad, fillColor="red")
+        self.circle1 = visual.Circle(win, units = 'deg', pos=(outer1), radius=circle_rad, fillColor="red", lineWidth=3.5)
+        self.circle2 = visual.Circle(win, units = 'deg', pos=(outer2), radius=circle_rad, fillColor="red", lineWidth=3.5)
 
         self.components = [self.circle1, self.circle2]
         
@@ -123,9 +125,9 @@ class Outer1(object):
 class Main1(object):
     def __init__(self):
         """create visual components"""
-        self.circle1 = visual.Circle(win, units = 'deg', pos=(grid1), radius=circle_rad, fillColor="green")
-        self.circle2 = visual.Circle(win, units = 'deg', pos=(grid2), radius=circle_rad, fillColor="green")
-        self.circle3 = visual.Circle(win, units = 'deg', pos=(grid3), radius=circle_rad, fillColor="green")
+        self.circle1 = visual.Circle(win, units = 'deg', pos=(grid1), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle2 = visual.Circle(win, units = 'deg', pos=(grid2), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle3 = visual.Circle(win, units = 'deg', pos=(grid3), radius=circle_rad, fillColor="green", lineWidth=3.5)
 
         self.components = [self.circle1, self.circle2, self.circle3]
         
@@ -136,8 +138,8 @@ class Main1(object):
 class Outer2(object):
     def __init__(self):
         """create visual components"""
-        self.circle3 = visual.Circle(win, units = 'deg', pos=(outer3), radius=circle_rad, fillColor="red")
-        self.circle4 = visual.Circle(win, units = 'deg', pos=(outer4), radius=circle_rad, fillColor="red")
+        self.circle3 = visual.Circle(win, units = 'deg', pos=(outer3), radius=circle_rad, fillColor="red", lineWidth=3.5)
+        self.circle4 = visual.Circle(win, units = 'deg', pos=(outer4), radius=circle_rad, fillColor="red", lineWidth=3.5)
 
         self.components = [self.circle3, self.circle4]
         
@@ -147,9 +149,9 @@ class Outer2(object):
 class Main2(object):
     def __init__(self):
         """create visual components"""
-        self.circle4 = visual.Circle(win, units = 'deg', pos=(grid4), radius=circle_rad, fillColor="green")
-        self.circle5 = visual.Circle(win, units = 'deg', pos=(grid5), radius=circle_rad, fillColor="green")
-        self.circle6 = visual.Circle(win, units = 'deg', pos=(grid6), radius=circle_rad, fillColor="green")
+        self.circle4 = visual.Circle(win, units = 'deg', pos=(grid4), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle5 = visual.Circle(win, units = 'deg', pos=(grid5), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle6 = visual.Circle(win, units = 'deg', pos=(grid6), radius=circle_rad, fillColor="green", lineWidth=3.5)
 
         self.components = [self.circle4, self.circle5, self.circle6]
         
@@ -160,8 +162,8 @@ class Main2(object):
 class Outer3(object):
     def __init__(self):
         """create visual components"""
-        self.circle5 = visual.Circle(win, units = 'deg', pos=(outer5), radius=circle_rad, fillColor="red")
-        self.circle6 = visual.Circle(win, units = 'deg', pos=(outer6), radius=circle_rad, fillColor="red")
+        self.circle5 = visual.Circle(win, units = 'deg', pos=(outer5), radius=circle_rad, fillColor="red", lineWidth=3.5)
+        self.circle6 = visual.Circle(win, units = 'deg', pos=(outer6), radius=circle_rad, fillColor="red", lineWidth=3.5)
 
         self.components = [self.circle5, self.circle6]
         
@@ -171,9 +173,9 @@ class Outer3(object):
 class Main3(object):
     def __init__(self):
         """create visual components"""
-        self.circle7 = visual.Circle(win, units = 'deg', pos=(grid7), radius=circle_rad, fillColor="green")
-        self.circle8 = visual.Circle(win, units = 'deg', pos=(grid8), radius=circle_rad, fillColor="green")
-        self.circle9 = visual.Circle(win, units = 'deg', pos=(grid9), radius=circle_rad, fillColor="green")
+        self.circle7 = visual.Circle(win, units = 'deg', pos=(grid7), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle8 = visual.Circle(win, units = 'deg', pos=(grid8), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle9 = visual.Circle(win, units = 'deg', pos=(grid9), radius=circle_rad, fillColor="green", lineWidth=3.5)
 
         self.components = [self.circle7, self.circle8, self.circle9]
         
@@ -184,9 +186,9 @@ class Main3(object):
 class Main4(object):
     def __init__(self):
         """create visual components"""
-        self.circle10 = visual.Circle(win, units = 'deg', pos=(grid10), radius=circle_rad, lineColor="red", fillColor="green")
-        self.circle11 = visual.Circle(win, units = 'deg', pos=(grid11), radius=circle_rad, lineColor="red", fillColor="green")
-        self.circle12 = visual.Circle(win, units = 'deg', pos=(grid12), radius=circle_rad, lineColor="red", fillColor="green")
+        self.circle10 = visual.Circle(win, units = 'deg', pos=(grid10), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle11 = visual.Circle(win, units = 'deg', pos=(grid11), radius=circle_rad, fillColor="green", lineWidth=3.5)
+        self.circle12 = visual.Circle(win, units = 'deg', pos=(grid12), radius=circle_rad, fillColor="green", lineWidth=3.5)
 
         self.components = [self.circle10, self.circle11, self.circle12]
         
@@ -197,8 +199,8 @@ class Main4(object):
 class Outer4(object):
     def __init__(self):
         """create visual components"""
-        self.circle7 = visual.Circle(win, units = 'deg', pos=(outer7), radius=circle_rad, fillColor="red")
-        self.circle8 = visual.Circle(win, units = 'deg', pos=(outer8), radius=circle_rad, fillColor="red")
+        self.circle7 = visual.Circle(win, units = 'deg', pos=(outer7), radius=circle_rad, fillColor="red", lineWidth=3.5)
+        self.circle8 = visual.Circle(win, units = 'deg', pos=(outer8), radius=circle_rad, fillColor="red", lineWidth=3.5)
 
         self.components = [self.circle7, self.circle8]
         
@@ -275,7 +277,7 @@ def solid_sweep(iterations=10, solid_color="blue", moving_color="red", wedges=Fa
                 for wedge in triangles:
                     wedge.fillColor=wedge_color
                     wedge.draw()
-
+            win.getMovieFrame(buffer='back')
             win.flip()
             core.wait(flicker_time)
             
@@ -322,6 +324,7 @@ def layered_random_sweep(iterations=5, solid_color="blue", wedges=False, wedge_c
                     wedge.fillColor = wedge_color
                     wedge.draw()
 
+            win.getMovieFrame(buffer='back')
             win.flip()
             core.wait(flicker_time)
             
@@ -369,24 +372,21 @@ def random_sweep(iterations=5, wedges=False, wedge_color="white", backg_color="w
                     wedge.lineColor=random.choice(circle_colors)
                     wedge.draw()
 
+            win.getMovieFrame(buffer='back')
             win.flip()
             core.wait(flicker_time)
 
 # call functions to display stimuli
-solid_sweep(iterations=8, solid_color="red", moving_color="green", wedges=True, backg_color="white", flicker=.1)
+flicker=.27
+solid_sweep(iterations=2, solid_color="red", moving_color="green", wedges=True, backg_color="black", flicker=flicker)
+layered_random_sweep(iterations = 3, solid_color = "red", wedges=True, wedge_color = "black", backg_color="black", flicker=flicker)
+random_sweep(iterations=4, wedges=True, wedge_color = "white", backg_color="black", flicker=flicker)
+layered_random_sweep(iterations = 3, solid_color = "red", wedges=True, wedge_color = "black", backg_color="black", flicker=flicker)
+solid_sweep(iterations=2, solid_color="red", moving_color="green", wedges=True, backg_color="black", flicker=flicker)
 
-layered_random_sweep(iterations=5, solid_color = "red", wedges=True, backg_color="white", flicker=.1)
-layered_random_sweep(iterations = 4, solid_color = "red", wedges=True, wedge_color = "white", backg_color="black", flicker=.1)
-layered_random_sweep(iterations = 4, solid_color = "red", wedges=True, wedge_color = "black", backg_color="black", flicker=.1)
 
-random_sweep(iterations=8, wedges=True, wedge_color = "white", backg_color="white", flicker=.1)
-random_sweep(iterations=15, wedges=True, wedge_color = "black", backg_color="black", flicker=.1)
-random_sweep(iterations=8, wedges=True, wedge_color = "white", backg_color="white", flicker=.1)
 
-layered_random_sweep(iterations = 4, solid_color = "red", wedges=True, wedge_color = "black", backg_color="black", flicker=.1)
-layered_random_sweep(iterations = 4, solid_color = "red", wedges=True, wedge_color = "white", backg_color="black", flicker=.1)
-layered_random_sweep(iterations=5, solid_color = "red", wedges=True, backg_color="white", flicker=.1)
-
+win.saveMovieFrames('color_change.gif')
 win.close()
 core.quit()
 
