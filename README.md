@@ -11,7 +11,7 @@ Multi_Circles.py             |  Kanizsa_FourQuadrant_Grid.py
 
 Right_Quadrant_Positions.py             |  Orbits.py
 :-------------------------:|:-------------------------:
-![](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Right_Quadrant_Positions/Images/Right_Quadrant_Positions.png)  |  ![](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/Orbits.gif)
+![](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Right_Quadrant_Positions/Images/Right_Quadrant_Positions.png)  |  ![](https://github.com/JonathanReardon/Stimulus-Visualisation/blob/master/Moving_Circles/Images/red_orbits.gif)
 
 Orbits2.py             |  Kanizsa_SingleQuadrant_Grid.py
 :-------------------------:|:-------------------------:
