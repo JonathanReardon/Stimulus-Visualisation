@@ -5,7 +5,9 @@ import random
 import math
 from math import sqrt
 
-win = visual.Window([1000,800], color="white", colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win = visual.Window([700,600], color="white", colorSpace='rgb', rgb=None, allowGUI=True, 
+                     monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win.mouseVisible = False
 
 rect_x, rect_y = [-5,0]
 Rect = visual.Rect(win, width=10, height=14, fillColor="black", pos=(rect_x, rect_y), units="deg")
@@ -22,24 +24,27 @@ def euclidean_distance(x1, y1, x2, y2):
 circle_colors = ["red", "green", "orange", "blue", "violet"]
 #circle_colors = ["black", "white"]
 
-center_circle = visual.Circle(win, units = 'deg', radius=.7, fillColor="black", interpolate=True, fillColorSpace='rgb')
+tracking_circle_width=4
+circle_connector_line_Width=3
+
+center_circle = visual.Circle(win, units = 'deg', radius=.7, fillColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 circle  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
-circle_outline  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, fillColorSpace='rgb')
+circle_outline  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 circle1  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
-circle1_outline  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, fillColorSpace='rgb')
+circle1_outline  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 circle2  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
-circle2_outline  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, fillColorSpace='rgb')
+circle2_outline  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 circle3  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
-circle3_outline  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, fillColorSpace='rgb')
+circle3_outline  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 line_color="red"
-line_connector = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb')
-line_connector1 = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb')
-line_connector2 = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb')
+line_connector = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb', lineWidth=circle_connector_line_Width)
+line_connector1 = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb', lineWidth=circle_connector_line_Width)
+line_connector2 = visual.Line(win, start=(-4,0), end=(4,0), lineColor=line_color, lineColorSpace='rgb', lineWidth=circle_connector_line_Width)
 
 ''' circle '''
 circle_position = []
@@ -135,7 +140,7 @@ while routine == True:
     line_connector1.draw()
     line_connector2.draw()
    
-    #win.getMovieFrame(buffer='back')
+    win.getMovieFrame(buffer='back')
     win.flip()
     
     circle_position.pop(0)
@@ -143,9 +148,9 @@ while routine == True:
     circle2_position.pop(0)
     circle3_position.pop(-1)
     
-    rect_x = rect_x+.015
+    rect_x = rect_x+.012
 
-#win.saveMovieFrames('orbit_block.gif')
+win.saveMovieFrames('orbit_block.gif')
 win.close()
 core.quit()
     
