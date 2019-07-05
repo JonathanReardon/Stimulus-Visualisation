@@ -34,10 +34,14 @@ circle2  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interp
 circle3  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
 circle4  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
 
-circle1_track  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle2_track  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle3_track  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle4_track  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle1_track  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, 
+                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle2_track  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, 
+                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle3_track  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, 
+                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle4_track  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, 
+                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 tracks  = [center_circle, circle1_track, circle2_track, circle3_track,  circle4_track]
 circles = [circle1, circle2, circle3, circle4]
@@ -91,7 +95,7 @@ while routine == True:
         circle.draw()
     for line in lines:
         line.draw()
-   
+        
     #win.getMovieFrame(buffer='back')
     win.flip()
     
