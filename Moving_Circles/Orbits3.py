@@ -52,10 +52,8 @@ angle=0
 n_dots = 360*2
     
 for i in range(n_dots):
-        
-    x,y = pol_to_cart(6,angle, 0, 0)
-    circle_position.append([x,y])
-        
+    
+    circle_position.append(pol_to_cart(6,angle, 0, 0))
     angle+=4
 
 ''' circle1 '''
@@ -65,9 +63,7 @@ n_dots = 360*2
     
 for i in range(n_dots):
         
-    x,y = pol_to_cart(4,angle, 0, 0)
-    circle1_position.append([x,y])
-        
+    circle1_position.append(pol_to_cart(4,angle, 0, 0))
     angle+=4
     
 ''' circle2 '''
@@ -77,9 +73,7 @@ n_dots = 360*2
     
 for i in range(n_dots):
         
-    x,y = pol_to_cart(3,angle, 0, 0)
-    circle2_position.append([x,y])
-        
+    circle2_position.append(pol_to_cart(3,angle, 0, 0))
     angle+=4
     
 ''' circle3 '''
@@ -89,9 +83,7 @@ n_dots = 360*2
     
 for i in range(n_dots):
         
-    x,y = pol_to_cart(2,angle, 0, 0)
-    circle3_position.append([x,y])
-        
+    circle3_position.append(pol_to_cart(2,angle, 0, 0))
     angle+=4
     
 routine = True
@@ -140,7 +132,7 @@ while routine == True:
     line_connector1.draw()
     line_connector2.draw()
    
-    win.getMovieFrame(buffer='back')
+    #win.getMovieFrame(buffer='back')
     win.flip()
     
     circle_position.pop(0)
@@ -150,7 +142,7 @@ while routine == True:
     
     rect_x = rect_x+.012
 
-win.saveMovieFrames('orbit_block.gif')
+#win.saveMovieFrames('orbit_block.gif')
 win.close()
 core.quit()
     
