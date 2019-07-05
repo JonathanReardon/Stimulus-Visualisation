@@ -5,8 +5,7 @@ import random
 import math
 from math import sqrt
 
-win = visual.Window([700,600], color="white", colorSpace='rgb', rgb=None, allowGUI=True, 
-                     monitor='testMonitor', units='deg', fullscr=False, screen=2)
+win = visual.Window([700,600], color="white", colorSpace='rgb', rgb=None, allowGUI=True, monitor='testMonitor', units='deg', fullscr=False, screen=2)
 win.mouseVisible = False
 
 rect_x, rect_y = [-5,0]
@@ -21,12 +20,14 @@ def euclidean_distance(x1, y1, x2, y2):
     distance = sqrt( (x1 - x2)**2 + (y1 - y2)**2 )
     return distance
     
+# set circle colors (to flicker between)
 circle_colors = ["red", "green", "orange", "blue", "violet"]
 #circle_colors = ["black", "red"]
 
 tracking_circle_width=4
 circle_connector_line_Width=3
 
+''' make circle stimuli '''
 center_circle = visual.Circle(win, units = 'deg', radius=.7, fillColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 circle1  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
@@ -34,14 +35,10 @@ circle2  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interp
 circle3  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
 circle4  = visual.Circle(win, units = 'deg', radius=.7, fillColor="blue", interpolate=True, fillColorSpace='rgb')
 
-circle1_track  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, 
-                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle2_track  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, 
-                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle3_track  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, 
-                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
-circle4_track  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, 
-                                           fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle1_track  = visual.Circle(win, units = 'deg', radius=6, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle2_track  = visual.Circle(win, units = 'deg', radius=4, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle3_track  = visual.Circle(win, units = 'deg', radius=3, lineColor="white", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
+circle4_track  = visual.Circle(win, units = 'deg', radius=2, lineColor="black", interpolate=True, fillColorSpace='rgb', lineWidth=tracking_circle_width)
 
 tracks  = [center_circle, circle1_track, circle2_track, circle3_track,  circle4_track]
 circles = [circle1, circle2, circle3, circle4]
@@ -96,7 +93,7 @@ while routine == True:
     for line in lines:
         line.draw()
         
-    #win.getMovieFrame(buffer='back')
+    #win.getMovieFrame(buffer='back') # uncomment to get frames
     win.flip()
     
     circle1_position.pop(0)
@@ -106,7 +103,7 @@ while routine == True:
     
     rect_x = rect_x+.012
 
-#win.saveMovieFrames('orbit_block.gif')
+#win.saveMovieFrames('orbit_block.gif') # uncomment to save frames as gif
 win.close()
 core.quit()
     
